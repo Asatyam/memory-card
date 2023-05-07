@@ -1,0 +1,10 @@
+.container{
+    display: grid;
+    background-color:pink ;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    place-content: center;
+    place-items: center;
+    gap:15px;
+    padding:10px;
+}
