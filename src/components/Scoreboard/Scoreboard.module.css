@@ -1,0 +1,6 @@
+.scoreboard{
+    padding:10px;
+    background-color: #d9f99d;
+    display: flex;
+    justify-content: space-around;
+}
