@@ -4,12 +4,11 @@ import style from "./Cards.module.css"
 
 
 
-export default function Cards({src,name}){
+export default function Cards({src,name,handleClick}){
 
     return(
-        <div className={style.card}>
+        <div className={style.card} onClick={ handleClick}>
             <img src = {src} alt = {name}/>
-
         </div>
     )
 }
