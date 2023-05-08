@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import style from "./Container.module.css"
 import Cards from "../Cards/Cards";
-export default function Container(){
+export default function Container({setCurrScore, setBestScore}){
 
     
      let iniCards = [{
@@ -78,20 +78,47 @@ export default function Container(){
     },
     ]
      const [cards, setCards] = useState(iniCards);
-     function shuffleArray(cards) {
+     const [prevBest, setPrevBest] = useState(0);
+     
+     function shuffleArray(cards,idx) {
         let array = cards.slice(0);
+        array[idx].clicked = true;  
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
             }
-    
+         
     return array;
     }
 
 
     const handleClick = (e)=>{
+         
         const idx = cards.findIndex((card)=>card.name === e.target.alt);
-        setCards(shuffleArray);
+
+        setCurrScore((curr)=>{
+
+            if(cards[idx].clicked){
+                console.log("working");
+                curr = 0;
+                setCards(cards=>{
+                    cards.forEach(card=>card.clicked = false);
+                    return cards;
+                });
+
+            }
+            else {
+                curr = curr + 1;
+                if(curr>prevBest){
+                    setBestScore(curr);
+                    setPrevBest(curr);
+                }
+            }
+            return curr;
+                
+        });
+        setCards(cards => shuffleArray(cards,idx));
+        
     }
 
     return(

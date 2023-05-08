@@ -1,12 +1,11 @@
 
 import React from "react";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import style from './Scoreboard.module.css'
-export default function Scoreboard(){
+export default function Scoreboard({currScore,bestScore}){
 
-    const [currScore, setCurrScore] = useState(0);
-    const [bestScore, setBestScore] = useState(0);
 
+   
     return(
         <div className={style.scoreboard}>
 
