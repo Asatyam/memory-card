@@ -1,10 +1,12 @@
+
+
 .container{
     display: grid;
-    background-color:pink ;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3,1fr);
+    background-color:#0c4a6e ;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
     place-content: center;
     place-items: center;
     gap:15px;
-    padding:10px;
+    padding:20px;
+    font-family: 'Monoton',cursive;
 }

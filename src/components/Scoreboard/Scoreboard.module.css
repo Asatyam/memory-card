@@ -1,6 +1,11 @@
+
 .scoreboard{
     padding:10px;
-    background-color: #d9f99d;
+    background-color: #818cf8;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    color:white;
+    font-weight: bold;
 }
+
+
